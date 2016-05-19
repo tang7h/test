@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>自适应尺寸的表格</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  body {
+    font-family: "microsoft yahei";
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.84);
+  }
+  div:last-child {
+    border-bottom: none;
+    border-right: none;
+  }
+  .table {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    border: 1px solid #4285f4!important;
+  }
+  .table>div {
+    border-bottom: 1px solid #4285f4;
+  }
+  .table-head {
+    flex: 0 0 auto;
+    padding: 16px;
+  }
+  .table-body {
+    flex: 11 0;
+    display: flex;
+    align-items: strench;
+  }
+  .colom {
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+
+  }
+  .row {
+    flex: 1 0;
+    display: flex;
+    border-bottom: 1px solid #4285f4;
+  }
+
+  .row c {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #4285f4;
+  }
+  .footer {
+    height: 100px;
+  }
+</style>
+<body>
+  <div class="table">
+    <div class="table-head">table head</div>
+    <div class="table-body">
+      <div class="colom">
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+        <div class="row"> <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> </div>
+
+      </div>
+    </div>
+    <div class="footer">底部</div>
+  </div>
+</body>
+</html>
