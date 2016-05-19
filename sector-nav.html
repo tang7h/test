@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>sector nav</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      /*border: 1px solid rgba(0,0,0,.1);*/
+    }
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .mask {
+      width: 100px;
+      height: 200px;
+      margin-left: 100px;
+      position: relative;
+      border-radius: 0 200px 200px 0;
+      overflow: hidden;
+      transform: translateZ(1px);
+      animation: mask 3s infinite alternate steps(1);
+    }
+    @keyframes mask {
+      50% {
+        width: 200px;
+        border-radius: 50%;
+        margin-left: 0;
+      }
+    }
+    .ink {
+      width: 100px;
+      height: 100%;
+      background: #4285f4;
+      position: absolute;
+      top: 0;
+    }
+    .ink:first-child {
+      right: 100px;
+      transform-origin: 100% 50%;
+      animation: ink-rotate 3s linear infinite alternate;
+
+    }
+    .ink:last-child {
+      right: 0;
+      /*background: #ea4335;*/
+      transform-origin: 100% 50%;
+      animation: ink-blink 3s infinite alternate steps(1);
+      z-index: -1;
+      opacity: 0;
+
+    }
+    @keyframes ink-rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes ink-blink {
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="mask">
+    <div class="ink"></div>
+    <div class="ink"></div>
+  </div>
+</body>
+</html>
