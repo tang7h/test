@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>star logo copy https://dribbble.com/shots/2725594-IndyEast-Promise-Zone-Logo</title>
+  <style>
+.logo {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+.sticks {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.stick {
+  width: 100px;
+  height: 20px;
+  border-radius: 10px;
+  background: gold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  transform-origin: 10px 10px;
+  opacity: .9;
+  mix-blend-mode: multiply;
+}
+.l1 { width: 50%; }
+.l2 { width: 47%; }
+.l3 { width: 44%; }
+
+.orange { background: hsla(23,100%,54%,1); }
+.blue { background: hsla(203,100%,62%,1); }
+.green { background: hsla(113,46%,60%,1); }
+.red { background: hsla(0,100%,66%,1); }
+.yellow { background: hsla(47,100%,60%,1); }
+.purple { background: rgb(93, 76, 127); }
+/*
+@for $i from 1 to 26 {
+  .stick:nth-child(#{$i}) {
+    transform: rotate(#{($i - 1)*14.4deg});
+  }
+}
+*/
+.stick:nth-child(1){transform:rotate(0deg)}.stick:nth-child(2){transform:rotate(14.4deg)}.stick:nth-child(3){transform:rotate(28.8deg)}.stick:nth-child(4){transform:rotate(43.2deg)}.stick:nth-child(5){transform:rotate(57.6deg)}.stick:nth-child(6){transform:rotate(72deg)}.stick:nth-child(7){transform:rotate(86.4deg)}.stick:nth-child(8){transform:rotate(100.8deg)}.stick:nth-child(9){transform:rotate(115.2deg)}.stick:nth-child(10){transform:rotate(129.6deg)}.stick:nth-child(11){transform:rotate(144deg)}.stick:nth-child(12){transform:rotate(158.4deg)}.stick:nth-child(13){transform:rotate(172.8deg)}.stick:nth-child(14){transform:rotate(187.2deg)}.stick:nth-child(15){transform:rotate(201.6deg)}.stick:nth-child(16){transform:rotate(216deg)}.stick:nth-child(17){transform:rotate(230.4deg)}.stick:nth-child(18){transform:rotate(244.8deg)}.stick:nth-child(19){transform:rotate(259.2deg)}.stick:nth-child(20){transform:rotate(273.6deg)}.stick:nth-child(21){transform:rotate(288deg)}.stick:nth-child(22){transform:rotate(302.4deg)}.stick:nth-child(23){transform:rotate(316.8deg)}.stick:nth-child(24){transform:rotate(331.2deg)}.stick:nth-child(25){transform:rotate(345.6deg)}
+
+.star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 50px;
+  height: 50px;
+}
+.star .corner {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  margin-left: -14px;
+  width: 0;
+  height: 0;
+  border: 14px solid transparent;
+  border-bottom-color: rgba(255,255,255,1);
+  border-bottom-width: 38px;
+  transform-origin: bottom;
+}
+/*
+@for $i from 1 to 6 {
+  .corner:nth-child(#{$i}) {
+    transform: rotate(#{$i * 72deg});
+  }
+}*/
+.corner:nth-child(1){transform:rotate(72deg)}.corner:nth-child(2){transform:rotate(144deg)}.corner:nth-child(3){transform:rotate(216deg)}.corner:nth-child(4){transform:rotate(288deg)}.corner:nth-child(5){transform:rotate(360deg)}
+
+.grains {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url(#grain);
+}
+#grain {
+  background: rgba(0,0,0,.5);
+  width: 50px;
+  height: 50px;
+  mix-blend-mode: darken;
+  position: fixed;
+  top: 100px;
+  left: 100px
+}
+
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <div class="sticks">
+      <div class="stick l3 orange"></div>
+      <div class="stick l2 blue"></div>
+      <div class="stick l1 green"></div>
+      <div class="stick l2 red"></div>
+      <div class="stick l1 yellow"></div>
+      <div class="stick l3 orange"></div>
+      <div class="stick l2 blue"></div>
+      <div class="stick l1 red"></div>
+      <div class="stick l2 purple"></div>
+      <div class="stick l3 yellow"></div>
+      <div class="stick l1 green"></div>
+      <div class="stick l3 red"></div>
+      <div class="stick l2 yellow"></div>
+      <div class="stick l2 orange"></div>
+      <div class="stick l2 blue"></div>
+      <div class="stick l3 purple"></div>
+      <div class="stick l1 red"></div>
+      <div class="stick l3 green"></div>
+      <div class="stick l1 orange"></div>
+      <div class="stick l2 yellow"></div>
+      <div class="stick l1 blue"></div>
+      <div class="stick l3 purple"></div>
+      <div class="stick l1 green"></div>
+      <div class="stick l2 red"></div>
+      <div class="stick l1 yellow"></div>
+    </div>
+    <div class="star">
+      <div class="corner"></div>
+      <div class="corner"></div>
+      <div class="corner"></div>
+      <div class="corner"></div>
+      <div class="corner"></div>
+    </div>
+  </div>
+  <div class="grains">
+  </div>
+  <div id="grain"></div>
+</body>
+</html>
