@@ -5,9 +5,11 @@
   <title>star logo copy https://dribbble.com/shots/2725594-IndyEast-Promise-Zone-Logo</title>
   <style>
 .logo {
-  width: 200px;
-  height: 200px;
+  width: 30vmin;
+  height: 30vmin;
   position: relative;
+  margin-left: 10%;
+  margin-top: 20%;
 }
 .sticks {
   width: 100%;
@@ -15,16 +17,15 @@
   position: relative;
 }
 .stick {
-  width: 100px;
-  height: 20px;
-  border-radius: 10px;
+  width: 100%;
+  height: 10%;
+  border-radius: 100px;
   background: gold;
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -10px;
-  margin-top: -10px;
-  transform-origin: 10px 10px;
+  margin-top: -5%;
+  transform-origin: 0 50%;
   opacity: .9;
   mix-blend-mode: multiply;
 }
@@ -35,8 +36,8 @@
 .orange { background: hsla(23,100%,54%,1); }
 .blue { background: hsla(203,100%,62%,1); }
 .green { background: hsla(113,46%,60%,1); }
-.red { background: hsla(0,100%,66%,1); }
-.yellow { background: hsla(47,100%,60%,1); }
+.red { background: hsla(0,84%,66%,1); }
+.yellow { background: hsla(42,100%,65%,1); }
 .purple { background: rgb(93, 76, 127); }
 /*
 @for $i from 1 to 26 {
@@ -52,47 +53,66 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  width: 50px;
-  height: 50px;
+  width: 40%;
+  height: 40%;
 }
 .star .corner {
   position: absolute;
   bottom: 50%;
   left: 50%;
-  margin-left: -14px;
-  width: 0;
-  height: 0;
-  border: 14px solid transparent;
-  border-bottom-color: rgba(255,255,255,1);
-  border-bottom-width: 38px;
+  margin-left: -50%;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
   transform-origin: bottom;
+}
+.corner:before {
+  content: '';
+  display: block;
+  width: 70%;
+  height: 140%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -35%;
+  border-radius: 5px;
+  background: #fff;
+  transform: rotate(45deg);
+  /*border: 1px solid tomato;*/
 }
 /*
 @for $i from 1 to 6 {
   .corner:nth-child(#{$i}) {
-    transform: rotate(#{$i * 72deg});
+    transform: rotate(#{$i * 72deg}) scaleX(.3);
   }
-}*/
-.corner:nth-child(1){transform:rotate(72deg)}.corner:nth-child(2){transform:rotate(144deg)}.corner:nth-child(3){transform:rotate(216deg)}.corner:nth-child(4){transform:rotate(288deg)}.corner:nth-child(5){transform:rotate(360deg)}
+}
+*/
+.corner:nth-child(1){transform:rotate(72deg) scaleX(0.32)}.corner:nth-child(2){transform:rotate(144deg) scaleX(0.32)}.corner:nth-child(3){transform:rotate(216deg) scaleX(0.32)}.corner:nth-child(4){transform:rotate(288deg) scaleX(0.32)}.corner:nth-child(5){transform:rotate(360deg) scaleX(0.32)}
 
 .grains {
-  width: 100vw;
-  height: 100vh;
+  width: 150vmax;
+  height: 150vmax;
   position: fixed;
-  top: 0;
-  left: 0;
-  background: url(#grain);
-}
-#grain {
-  background: rgba(0,0,0,.5);
-  width: 50px;
-  height: 50px;
-  mix-blend-mode: darken;
-  position: fixed;
-  top: 100px;
-  left: 100px
+  top: 50%;
+  margin-top: -75vmax;
+  left: 50%;
+  margin-left: -75vmax;
+  background: url(dot.svg);
+  mix-blend-mode: overlay;
+  -webkit-transform: rotate(-20deg);
 }
 
+.ball {
+  position: fixed;
+  width: 35vmin;
+  height: 35vmin;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+}
+.ball.blue { left: -20%; bottom: -5%; }
+.ball.red { right: -5%; top: -10%; }
+.ball.yellow { right: -24%; bottom: -5%; }
+.ball.green { right: -5%; bottom: -17%; }
   </style>
 </head>
 <body>
@@ -131,9 +151,13 @@
       <div class="corner"></div>
       <div class="corner"></div>
     </div>
+    <div class="balls">
+      <div class="ball blue"></div>
+      <div class="ball red"></div>
+      <div class="ball yellow"></div>
+      <div class="ball green"></div>
+    </div>
   </div>
-  <div class="grains">
-  </div>
-  <div id="grain"></div>
+  <div class="grains"> </div>
 </body>
 </html>
