@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>circle loading</title>
+</head>
+<style>
+.circle {
+  transform-origin: center;
+  animation: circle 2s linear infinite;
+}
+@keyframes circle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.color {
+  animation: color 6s infinite;
+}
+@keyframes color {
+  0%,100% { color: hsl(136,53%,43%); }
+  5% { color: hsl(217,89%,61%); }
+
+  25% { color: hsl(217,89%,61%); }
+  30% { color: hsl(5,81%,56%);; }
+
+  50% { color: hsl(5,81%,56%);; }
+  55% { color: hsl(56,97%,50%); }
+
+  75% { color: hsl(56,97%,50%); }
+  80% { color: hsl(136,53%,43%); }
+}
+
+.ink {
+  transform-origin: center;
+  animation: ink 1.5s infinite;
+}
+@keyframes ink {
+  0% {
+    stroke-dasharray: 0 565;
+  }
+  50% {
+    stroke-dasharray: 520 565;
+    transform: rotate(0deg);
+  }
+  100% {
+    stroke-dasharray: 0 565;
+    transform: rotate(360deg);
+  }
+}
+</style>
+<body>
+  <svg class="color" width="200" height="200" viewbox="0 0 200 200">
+    <g class="circle">
+      <circle class="ink" cx="100" cy="100" r="90" stroke-width="20" stroke="currentcolor" fill="none" stroke-dasharray="0 565"></circle>
+    </g>
+  </svg>
+</body>
+</html>
