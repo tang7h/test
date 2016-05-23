@@ -2,9 +2,20 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1">
   <title>circle loading</title>
 </head>
 <style>
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
 .circle {
   transform-origin: center;
   animation: circle 2s linear infinite;
@@ -23,12 +34,12 @@
   5% { color: hsl(217,89%,61%); }
 
   25% { color: hsl(217,89%,61%); }
-  30% { color: hsl(5,81%,56%);; }
+  30% { color: hsl(5,81%,56%); }
 
-  50% { color: hsl(5,81%,56%);; }
-  55% { color: hsl(56,97%,50%); }
+  50% { color: hsl(5,81%,56%); }
+  55% { color: hsl(45,97%,50%); }
 
-  75% { color: hsl(56,97%,50%); }
+  75% { color: hsl(45,97%,50%); }
   80% { color: hsl(136,53%,43%); }
 }
 
@@ -38,22 +49,20 @@
 }
 @keyframes ink {
   0% {
-    stroke-dasharray: 0 565;
   }
   50% {
-    stroke-dasharray: 520 565;
+    stroke-dasharray: 70 76;
     transform: rotate(0deg);
   }
   100% {
-    stroke-dasharray: 0 565;
     transform: rotate(360deg);
   }
 }
 </style>
 <body>
-  <svg class="color" width="200" height="200" viewbox="0 0 200 200">
+  <svg class="color" width="48" height="48" viewbox="0 0 48 48">
     <g class="circle">
-      <circle class="ink" cx="100" cy="100" r="90" stroke-width="20" stroke="currentcolor" fill="none" stroke-dasharray="0 565"></circle>
+      <circle class="ink" cx="24" cy="24" r="12" stroke-width="2" stroke="currentcolor" fill="none" stroke-dasharray="0 76"></circle>
     </g>
   </svg>
 </body>
