@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>windows loading animation</title>
+  <style>
+  body {
+    display: flex;
+    justify-content: center;
+    color: #555;
+  }
+.loading {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  transform: rotate(90deg);
+}
+.ball {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentcolor;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -2.5px;
+  transform-origin: -14px;
+  animation: ball 5s cubic-bezier(0.13, 0.59, 0.89, 0.38) infinite;
+  animation-fill-mode: backwards;
+}
+/*
+@for $i from 2 through 6 {
+  .ball:nth-child(#{$i}) { animation-delay: ($i - 1) * 0.2s; }
+}
+*/
+.ball:nth-child(2){animation-delay:.2s}.ball:nth-child(3){animation-delay:.4s}.ball:nth-child(4){animation-delay:.6s}.ball:nth-child(5){animation-delay:.8s}.ball:nth-child(6){animation-delay:1s}
+
+
+@keyframes ball {
+  0% {
+    opacity: 0
+  }
+  1% {
+    opacity: 1;
+  }
+  38% {
+    transform: rotate(360deg);
+  }
+  75% {
+    opacity: 1;
+  }
+  76% {
+    transform: rotate(720deg);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(1024deg);
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+  </div>
+</body>
+</html>
