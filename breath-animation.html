@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1">
+  <title>watchOS Breath animation</title>
+</head>
+<style>
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  margin: 0;
+}
+.flower,.shadow {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -100px;
+}
+.flower {
+  animation: rotate 4.5s infinite alternate;
+}
+.shadow {
+  display: none;
+}
+.ink {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(hsl(150, 100%, 80%),hsl(199, 100%, 75%));
+  mix-blend-mode: color;
+  background-blend-mode: screen;
+}
+.ink {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+@keyframes rotate {
+  100%{
+    transform: rotate(180deg);
+  }
+}
+.calyx {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+@for $i from 2 to 9 {
+  .calyx:nth-child(#{$i}){
+    transform: rotate((($i - 1)*360/8)deg);
+  }
+}
+.calyx:nth-child(2){transform:rotate(45deg)}.calyx:nth-child(3){transform:rotate(90deg)}.calyx:nth-child(4){transform:rotate(135deg)}.calyx:nth-child(5){transform:rotate(180deg)}.calyx:nth-child(6){transform:rotate(225deg)}.calyx:nth-child(7){transform:rotate(270deg)}.calyx:nth-child(8){transform:rotate(315deg)}
+
+.petal {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(90deg,rgba(255,255,255,.5),hsla(175, 100%, 68%, 0.5));
+  mix-blend-mode: luminosity;
+  animation: bloom 9s infinite;
+  transform: scale(.3);
+}
+@for $i from 1 to 9 {
+  .calyx:nth-child(#{$i}) .petal {
+    background: linear-gradient(90deg,hsla(360, 100%, 100%, 0.5),hsla((150 + abs($i - 4) * 8), 100%, 70%, .5)80%);
+  }
+}
+.calyx:nth-child(1) .petal{background:linear-gradient(90deg, rgba(255,255,255,0.5), rgba(102,255,240,0.5) 80%)}.calyx:nth-child(2) .petal{background:linear-gradient(90deg, rgba(255,255,255,0.5), rgba(102,255,219,0.5) 80%)}.calyx:nth-child(3) .petal{background:linear-gradient(90deg, rgba(255,255,255,0.5), rgba(102,255,199,0.5) 80%)}.calyx:nth-child(4) .petal{background:linear-gradient(90deg, rgba(255,255,255,0.5), rgba(102,255,179,0.5) 80%)}.calyx:nth-child(5) .petal{background:linear-gradient(90deg, rgba(255,255,255,0.5), rgba(102,255,199,0.5) 80%)}.calyx:nth-child(6) .petal{background:linear-gradient(90deg, rgba(255,255,255,0.5), rgba(102,255,219,0.5) 80%)}.calyx:nth-child(7) .petal{background:linear-gradient(90deg, rgba(255,255,255,0.5), rgba(102,255,240,0.5) 80%)}.calyx:nth-child(8) .petal{background:linear-gradient(90deg, rgba(255,255,255,0.5), rgba(102,250,255,0.5) 80%)}
+
+.shadow .petal {
+  animation: breath 9s infinite;
+}
+
+@keyframes bloom {
+  50%{
+    transform: scale(1) translateX(50%);
+  }
+}
+@keyframes breath {
+  0% {
+    opacity: 0;
+  }
+  50%{
+    transform: scale(1) translateX(50%);
+    opacity: 0;
+  }
+  51%{
+    opacity: .5;
+  }
+  80%{
+    transform: scale(.8) translateX(40%);
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+
+}
+</style>
+<body>
+  <div class="flower">
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+  </div>
+  <div class="shadow">
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+    <div class="calyx"><div class="petal"></div></div>
+  </div>
+  <div class="ink"></div>
+</body>
+</html>
