@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>ripple boot animation</title>
+</head>
+<style>
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+}
+.ripples {
+  width: 40vmin;
+  height: 40vmin;
+  position: relative;
+}
+.ripple {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(0,0,0,.8);
+  transform-origin: 48% 50%;
+  animation: ripple 10s linear infinite;
+  animation-fill-mode: both;
+  mix-blend-mode: multiply;
+}
+@keyframes ripple {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.ripple:nth-of-type(1){
+  background: #FF2728;
+  animation-duration: 8s;
+  transform-origin: 49%;
+}
+.ripple:nth-of-type(2){
+  background: #FF8C15;
+  animation-duration: 6s;
+  transform-origin: 51%;
+}
+.ripple:nth-of-type(3){
+  background: #4FC415;
+  animation-duration: 3s;
+  transform-origin: 50% 49%;
+}
+.ripple:nth-of-type(4){
+  background: #0191D7;
+  animation-duration: 20s;
+  transform-origin: 48% 50%;
+}
+</style>
+<body>
+  <div class="ripples">
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+  </div>
+</body>
+</html>
